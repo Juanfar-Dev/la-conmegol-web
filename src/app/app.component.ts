@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit, inject } from '@angular/core';
+import { ActivatedRoute, Route, RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 
 @Component({
@@ -11,25 +11,10 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 })
 export class AppComponent {
   title = 'la-conmegol-web';
+  private route = inject(ActivatedRoute);
 
-  menuItems = [
-    {
-      mid: '1-mobile',
-      wid: '1-web',
-      name: 'Torneos',
-      path: '/tournaments'
-    },
-    {
-      mid: '2-mobile',
-      wid: '2-web',
-      name: 'Equipos',
-      path: '/teams'
-    },
-    {
-      mid: '3-mobile',
-      wid: '3-web',
-      name: 'Jugadores',
-      path: '/'
-    }
-  ]
+  constructor() {
+    console.log(this.route.snapshot.data['title']);
+  }
+
 }
