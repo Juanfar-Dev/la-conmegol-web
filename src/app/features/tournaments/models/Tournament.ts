@@ -5,11 +5,13 @@ import { Team } from "../../teams/models/Team";
 export interface Tournament {
   id: number;
   name: string;
-  active: boolean;
-  remaining: string;
+  status: string;
+  remaining: number;
   location: string;
   favorite: boolean;
-  teams: Team[];
-  Players: Player[];
-  Matches: Match[];
+  mode: string;
+  teamsCount: number;
+  teams?: Team[];
+  players?: Player[];
+  matches?: Match[];
 }
