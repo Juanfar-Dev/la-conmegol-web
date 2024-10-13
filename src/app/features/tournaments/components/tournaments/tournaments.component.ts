@@ -3,11 +3,15 @@ import { CardTournamentComponent } from '../card-tournament/card-tournament.comp
 import { TournamentsService } from '../../services/tournaments.service';
 import { Tournament } from '../../models/Tournament';
 import { firstValueFrom } from 'rxjs';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-tournaments',
   standalone: true,
-  imports: [CardTournamentComponent],
+  imports: [
+    RouterModule,
+    CardTournamentComponent
+  ],
   templateUrl: './tournaments.component.html',
   styleUrl: './tournaments.component.scss'
 })
